@@ -1,8 +1,17 @@
 
+var fs = require( 'fs' );
+
+var onConfig = function(req, res, json)
+{
+  res.render(
+    'opening',
+    { title: 'Garage Opening' +json }
+  );
+};
+
 exports.enter = function(req, res)
 {
-  // if code matches
-  res.render('opening', { title: 'Garage Opening' })
+  fs.readFile( 'config.js', onConfig.partial(req,res) );
 };
 
 exports.index = function(req, res)

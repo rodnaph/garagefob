@@ -1,4 +1,14 @@
 
+if ( !Function.partial ) {
+  Function.prototype.partial = function() {
+    var func = this;
+    var args = Array.prototype.slice.call( arguments );
+    return function() {
+      return func.apply( this, args.concat(arguments) );
+    };
+  };
+}
+
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
@@ -16,10 +26,6 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
-});
-
-app.configure('development', function(){
-  app.use(express.errorHandler());
 });
 
 app.get('/', routes.index);
