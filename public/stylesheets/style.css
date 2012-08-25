@@ -1,0 +1,67 @@
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #aca;
+  padding: 10px;
+}
+
+.wrap {
+    width: 300px;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+}
+
+.pad .row {
+    clear: left;
+}
+
+.key,
+.enter {
+    text-align: center;
+    
+}
+
+.key,
+.reset,
+.enter {
+    padding: 0;
+}
+
+.key {
+    display: block;
+    float: left;
+    width: 70px;
+    height: 75px;
+    background-color: #8a8;
+    margin: 5px;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.key:active {
+    background-color: #575;
+}
+
+.reset,
+.enter {
+    margin-top: 10px;
+    background-color: #c77;
+    height: 85px;
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #400;
+}
+
+.enter {
+    width: 70%;
+}
+
+.reset {
+    width: 28%;
+    background-color: #000;
+}
+

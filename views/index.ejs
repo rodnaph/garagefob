@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/lessframework.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  </head>
+  <body>
+    <div class="wrap">
+        <form method="post" action="/enter">
+            <input type="hidden" id="code" name="code" value="" />
+            <div class="pad">
+                <div class="row">
+                    <input class="key" type="button" value="7" />
+                    <input class="key" type="button" value="8" />
+                    <input class="key" type="button" value="9" />
+                </div>
+                <div class="row">
+                    <input class="key" type="button" value="4" />
+                    <input class="key" type="button" value="5" />
+                    <input class="key" type="button" value="6" />
+                </div>
+                <div class="row">
+                    <input class="key" type="button" value="1" />
+                    <input class="key" type="button" value="2" />
+                    <input class="key" type="button" value="3" />
+                </div>
+            </div>
+            <input class="reset" type="reset" id="reset" value="&lt;" />
+            <input class="enter" type="submit" value="Open" />
+        </form>
+        <script type="text/javascript" src="/javascripts/main.js"></script>
+  </body>
+</html>
