@@ -4,25 +4,28 @@ var fs = require( 'fs' );
 function notifyBackend( config )
 {
   if (config.backend) {
+    console.info('Notify backend: ', config.backend);
     var backend = require('../backends/' +config.backend);
     return backend.open(config.backends[config.backend]);
   }
   return false;
 };
 
+function show(res, tmpl, title)
+{
+  res.render(
+    tmpl,
+    {title: title}
+  );
+}
+
 function open(res, config)
 {
   if ( notifyBackend(config) === false ) {
-    res.render(
-      'error',
-      {title: 'Ooops...'}
-    );
+    show(res, 'error', 'Ooops');
   }
   else {
-    res.render(
-      'opening',
-      {title: 'Garage Opening'}
-    );
+    show(res, 'opening', 'Garage Opening');
   }
 };
 
@@ -33,27 +36,32 @@ function deny(res)
 
 function pinIsOk(req, config)
 {
-  return (req.body.code == config.pin);
+  var pin = req.body.code;
+  console.info('Check pin: ', pin)
+  return (pin == config.pin);
 };
 
 function onConfig(req, res, err, json)
 {
-  var config = JSON.parse(json);
-  var handler = pinIsOk(req, config) ? open : deny;
+  if (err) {
+    console.error('Config file not found...');
+    show(res, 'error', 'Ooops...');
+  }
+  else {
+    var config = JSON.parse(json);
+    var handler = pinIsOk(req, config) ? open : deny;
 
-  handler(res, config);
+    handler(res, config);
+  }
 };
 
 exports.enter = function(req, res)
 {
-  fs.readFile('config.js', onConfig.partial(req, res));
+  fs.readFile('config.sjs', onConfig.partial(req, res));
 };
 
 exports.index = function(req, res)
 {
-  res.render(
-    'index',
-    {title: 'Garage Fob'}
-  );
+  show(res, 'index', 'Garage Fob');
 };
 
