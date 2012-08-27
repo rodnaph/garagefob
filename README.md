@@ -31,7 +31,7 @@ robot finger backend (currently being developed in secret by Irregular Labs).
 }
 ```
 
-Troubleshotting
+Troubleshooting
 ---------------
 
 If you have problems, then I'll be amazed, cause it doesn't even work yet.
