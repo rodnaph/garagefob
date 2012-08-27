@@ -31,6 +31,19 @@ robot finger backend (currently being developed in secret by Irregular Labs).
 }
 ```
 
+Usage
+-----
+
+You should then be able to start the web server with:
+
+```
+node app.js
+```
+
+And then browse to the web interface at http://localhost:3000.
+
+![](http://github.com/rodnaph/garagefob/raw/master/www.png)
+
 Troubleshooting
 ---------------
 
