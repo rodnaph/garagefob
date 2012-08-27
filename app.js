@@ -4,7 +4,10 @@ if ( !Function.partial ) {
     var func = this;
     var args = Array.prototype.slice.call( arguments );
     return function() {
-      return func.apply( this, args.concat(arguments) );
+      return func.apply(
+        this,
+        args.concat( Array.prototype.slice.call(arguments) )
+      );
     };
   };
 }
