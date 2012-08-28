@@ -1,12 +1,27 @@
 
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #666;
+    background-image: -moz-radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
+    background-image: -webkit-radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
+    background-image: -o-radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
+    background-image: -ms-radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
+    background-image: radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg)
+}
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #aca;
-  padding: 10px;
+    font: 14px "Dosis", Helvetica, Arial, sans-serif;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .wrap {
-    width: 300px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -14,7 +29,10 @@ h1 {
     text-align: center;
     font-size: 3em;
 }
-
+#keypad {
+    padding: 5%;
+    overflow: hidden;
+}
 .pad .row {
     clear: left;
 }
@@ -32,18 +50,49 @@ h1 {
 }
 
 .key {
+    font-family: "Dosis", Helvetica, Arial, sans-serif;
     display: block;
     float: left;
-    width: 70px;
-    height: 75px;
-    background-color: #8a8;
-    margin: 5px;
-    font-size: 3em;
+    width: 30%;
+    height: 66px;
+    margin-right: 3.33%;
+    margin-bottom: 14px;
+    font-size: 2.8em;
     cursor: pointer;
+
+    border: 1px solid #111;
+    border-bottom: 3px solid #999;
+    background-color: #ccc;
+
+    border-radius: 8px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.7), inset 0 1px 0 #fff;
+
+    background-image: linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
+    background-image: -o-linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
+    background-image: -moz-linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
+    background-image: -ms-linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(196,196,196)),
+        color-stop(1, rgb(242,242,242))
+    );
+
+    text-shadow: 0 1px 0 #fff;
 }
 
 .key:active {
-    background-color: #575;
+    border-bottom: 1px solid #111;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.7), inset 0 1px 0 #333;
+
+    background-image: linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
+    background-image: -o-linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
+    background-image: -moz-linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
+    background-image: -ms-linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
 }
 
 .reset,
