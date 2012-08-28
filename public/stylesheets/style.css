@@ -7,7 +7,8 @@ html {
     background-image: -webkit-radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
     background-image: -o-radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
     background-image: -ms-radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
-    background-image: radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg)
+    background-image: radial-gradient(50% 50%, ellipse cover, transparent, rgba(0, 0, 0, .6) 100%), url(../images/bg.jpg);
+    box-shadow: inset 0 0 10px #000;
 }
 body {
     font: 14px "Dosis", Helvetica, Arial, sans-serif;
@@ -33,39 +34,54 @@ h1 {
     padding: 5%;
     overflow: hidden;
 }
+#code {
+    font-family: "Dosis", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    color: #333;
+    background: rgb(175, 186, 168);
+    border-radius: 8px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.6), inset 0 1px 2px rgba(0,0,0,1);
+    line-height: 40px;
+    height: 40px;
+    width: 90%;
+    padding: 20px 5%;
+    margin-bottom: 15px;
+
+    background-image: -o-linear-gradient(top, rgb(180, 191, 173) 0%, rgb(150, 161, 143) 100%);
+    background-image: -moz-linear-gradient(top, rgb(180, 191, 173) 0%, rgb(150, 161, 143) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(180, 191, 173) 0%, rgb(150, 161, 143) 100%);
+    background-image: -ms-linear-gradient(top, rgb(180, 191, 173) 0%, rgb(150, 161, 143) 100%);
+    background-image: linear-gradient(top, rgb(180, 191, 173) 0%, rgb(150, 161, 143) 100%);
+
+    border: none;
+    border-bottom: 1px solid #999;
+}
+
 .pad .row {
     clear: left;
 }
 
 .key,
-.enter {
-    text-align: center;
-    
-}
-
-.key,
-.reset,
-.enter {
+.enter,
+.reset {
+    text-align: center;  
     padding: 0;
-}
-
-.key {
     font-family: "Dosis", Helvetica, Arial, sans-serif;
     display: block;
     float: left;
-    width: 30%;
+    width: 31%;
     height: 66px;
-    margin-right: 3.33%;
-    margin-bottom: 14px;
+    margin-right: 3.5%;
+    margin-bottom: 15px;
     font-size: 2.8em;
     cursor: pointer;
 
     border: 1px solid #111;
-    border-bottom: 3px solid #999;
+    border-bottom: 3px solid #bbb;
     background-color: #ccc;
 
     border-radius: 8px;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.7), inset 0 1px 0 #fff;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.5), inset 0 1px 0 #fff;
 
     background-image: linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
     background-image: -o-linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
@@ -73,21 +89,17 @@ h1 {
     background-image: -webkit-linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
     background-image: -ms-linear-gradient(top, rgb(180,180,180) 0%, rgb(242,242,242) 100%);
 
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, rgb(196,196,196)),
-        color-stop(1, rgb(242,242,242))
-    );
-
     text-shadow: 0 1px 0 #fff;
 }
+.row .key:nth-child(3n+3) {
+    margin-right: 0;
+}
 
-.key:active {
+.key:active,
+.enter:active,
+.reset:active {
     border-bottom: 1px solid #111;
     box-shadow: 0 1px 2px rgba(0,0,0,0.7), inset 0 1px 0 #333;
-
     background-image: linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
     background-image: -o-linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
     background-image: -moz-linear-gradient(top, rgb(150,150,150) 0%, rgb(200,200,200) 100%);
@@ -97,20 +109,20 @@ h1 {
 
 .reset,
 .enter {
-    margin-top: 10px;
-    background-color: #c77;
     height: 85px;
     font-size: 3em;
     text-transform: uppercase;
-    color: #400;
 }
 
 .enter {
-    width: 70%;
+    width: 65.5%;
+    margin-right: 0;
+    color: rgba(190,0,0,1);
+    text-shadow: 0 0 4px rgba(173,0,0,0.5);
 }
 
 .reset {
-    width: 28%;
+    width: 31%;
     background-color: #000;
 }
 
